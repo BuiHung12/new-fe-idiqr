@@ -1,0 +1,26 @@
+.label-container {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.label-approved {
+  color: green;
+  border-color: green;
+}
+
+.label-pending {
+  color: orange;
+  border-color: orange;
+}
+
+.label-declined {
+  color: red;
+  border-color: red;
+}
+
+.label-unknown {
+  color: black;
+  border-color: black;
+}

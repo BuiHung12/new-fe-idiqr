@@ -1,0 +1,99 @@
+{
+  "appName": "TailAdmin",
+  "welcome": "Chào mừng",
+  "description": "Đây là một ví dụ về ứng dụng React với đa ngôn ngữ.",
+  "menu": {
+    "menu": "DANH MỤC",
+    "dashboard": "Bảng điều khiển",
+    "calendar": "Lịch",
+    "users": "Danh sách người dùng",
+    "profile": "Cá nhân",
+    "forms": "Biểu mẫu",
+    "formsElements": "Thành phần biểu mẫu",
+    "formsLayout": "Bố cụ biểu mẫu",
+    "tables": "Bảng",
+    "settings": "Cài đặt",
+    "others": "KHÁC",
+    "chart": "Biểu đồ",
+    "uiElements": "Thành phần Ui",
+    "alerts": "Báo động",
+    "buttons": "Nút bấm",
+    "authentication": "Xác thực",
+    "signin": "Đăng nhập",
+    "signup": "Đăng ký"
+  },
+  "signInPage": {
+    "description": "Khách hàng là một thuật ngữ cực kỳ phổ biến trong các lĩnh vực liên quan đến kinh doanh và tạo ra lợi nhuận",
+    "title": "Đăng nhập vào TailAdmin",
+    "username": "Tài khoản",
+    "hideUserName": "Nhập tài khoản của bạn",
+    "password": "Mật khẩu",
+    "hidePassword": "Nhập mật khẩu của bạn",
+    "button1": "Đăng nhập",
+    "button2": "Đăng nhập với Google",
+    "message": "Chưa có tài khoản?",
+    "link": "Đăng ký",
+    "optionAlert": {
+      "loginSuccessAlerts": {
+        "title" : "Thành công",
+        "message" : "Đăng nhập thành công"
+      },
+      "loginErrorAlerts": {
+        "title" : "Đăng nhập thất bại",
+        "message" : "Tài khoản hoặc mật khẩu chưa đúng"
+      },
+      "signupSuccessAlerts": {
+        "title": "Đăng ký thành công",
+        "message": "Đã đăng ký thành công"
+      },
+      "signupErrorAlerts1": {
+        "title": "Đăng ký thất bại",
+        "message": "Mật khẩu không trùng khớp"
+      },
+      "signupErrorAlerts2": {
+        "title": "Đăng ký thất bại",
+        "message": "Tài khoản đã tồn tại"
+      },
+      "errorAlerts": {
+        "title" : "Lỗi",
+        "message" : "Đã có một lỗi xảy ra. Xin vui lòng thử lại."
+      }
+    }
+  },
+  "signUpPage": {
+    "description": "Khách hàng là một thuật ngữ cực kỳ phổ biến trong các lĩnh vực liên quan đến kinh doanh và tạo ra lợi nhuận",
+    "title": "Đăng ký vào TailAdmin",
+    "name": "Họ và Tên",
+    "hideName": "Nhập họ và tên của bạn",
+    "username": "Tài khoaản",
+    "hideUserName": "Nhập tài khoản của bạn",
+    "password": "Mật khẩu",
+    "hidePassword": "Nhập mật khẩu của bạn",
+    "rePassword": "Nhập lại mật khẩu",
+    "hideRePassword": "Nhập lại mật khẩu của bạn",
+    "button1": "Tạo tài khoản",
+    "button2": "Đăng ký với Google",
+    "message": "Đã có tài khoản?",
+    "link": "Đăng nhập"
+  },
+  "userPage": {
+    "optionAlert": {
+      "userExist": {
+        "title": "Tạo Fail",
+        "message": "Tên tài khoản đã tồn tại"
+      },
+      "createSuccess": {
+        "title": "Tạo thành công",
+        "message": "Tạo tài khoản thành công"
+      },
+      "updateSuccess": {
+        "title": "Cập nhật thành công",
+        "message": "Cập nhật tài khoản thành công"
+      },
+      "deleteSuccess": {
+        "title": "Xóa thành công",
+        "message": "Xóa tài khoản thành công"
+      }
+    }
+  }
+}

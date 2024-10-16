@@ -1,0 +1,99 @@
+{
+  "appName": "TailAdmin",
+  "welcome": "Hello",
+  "description": "This is an example of a React app with localization.",
+  "menu": {
+    "menu": "MENU",
+    "dashboard": "Dashboard",
+    "calendar": "Calendar",
+    "users": "Users",
+    "profile": "Profile",
+    "forms": "Forms",
+    "formsElements": "Forms Elements",
+    "formsLayout": "Forms Layout",
+    "tables": "Tables",
+    "settings": "Setting",
+    "others": "OTHERS",
+    "chart": "Chart",
+    "uiElements": "Ui Elements",
+    "alerts": "Alerts",
+    "buttons": "Buttons",
+    "authentication": "Authentication",
+    "signin": "Sign In",
+    "signup": "Sign Up"
+  },
+  "signInPage": {
+    "description": "Customer is an extremely popular term in areas related to business and making profits",
+    "title": "Sign In to TailAdmin",
+    "username": "Username",
+    "hideUserName": "Enter your username",
+    "password": "Password",
+    "hidePassword": "Enter your password",
+    "button1": "Sign In",
+    "button2": "Sign In With Google",
+    "message": "Don’t have any account?",
+    "link": "Sign Up",
+    "optionAlert": {
+      "loginSuccessAlerts": {
+        "title": "Login Successful",
+        "message": "Login was successful"
+      },
+      "loginErrorAlerts": {
+        "title": "Login Failed",
+        "message": "Incorrect username or password"
+      },
+      "signupSuccessAlerts": {
+        "title": "Sign Up Successful",
+        "message": "Sign Up was successful"
+      },
+      "signupErrorAlerts1": {
+        "title": "Sign Up Failed",
+        "message": "Password is not match"
+      },
+      "signupErrorAlerts2": {
+        "title": "Sign Up Failed",
+        "message": "Username is exist"
+      },
+      "errorAlerts": {
+        "title": "Error",
+        "message": "An error has occurred. Please try again."
+      }
+    }
+  },
+  "signUpPage": {
+    "description": "Customer is an extremely popular term in areas related to business and making profits",
+    "title": "Sign In to TailAdmin",
+    "name": "Name",
+    "hideName": "Enter your full name",
+    "username": "Username",
+    "hideUserName": "Enter your username",
+    "password": "Password",
+    "hidePassword": "Enter your password",
+    "rePassword": "Re-type Password",
+    "hideRePassword": "Re-enter your password",
+    "button1": "Create account",
+    "button2": "Sign Up With Google",
+    "message": "Already have an account?",
+    "link": "Sign In"
+  },
+  "userPage": {
+    "optionAlert": {
+      "userExist": {
+        "title": "Create Fail",
+        "message": "Username is exist"
+      },
+      "createSuccess": {
+        "title": "Create Successful",
+        "message": "Create was Successful"
+      },
+      "updateSuccess": {
+        "title": "Update Successful",
+        "message": "Update was Successful"
+      },
+      "deleteSuccess": {
+        "title": "Delete Successful",
+        "message": "Delete was Successful"
+      }
+    }
+  }
+}
