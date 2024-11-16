@@ -3,10 +3,78 @@
   "welcome": "Chào mừng",
   "description": "Đây là một ví dụ về ứng dụng React với đa ngôn ngữ.",
   "menu": {
+    "codeManage": {
+      "name": "Quản lý bảng mã",
+      "naviCode": {
+        "name": "Mã điều hướng"
+      },
+      "assignNaviCode": {
+        "name": "Gán mã điều hướng"
+      },
+      "importCode": {
+        "name": "Đợt phát hành tem"
+      },
+      "activeRole": {
+        "name": "Thiết lập QRcode"
+      }
+    },
+    "activeManage": {
+      "name": "Quản lý kích hoạt",
+      "productList": {
+        "name": "Danh sách sản phẩm"
+      },
+      "agentList": {
+        "name": "Danh sách đại lý"
+      },
+      "productAssign": {
+        "name": "Kích hoạt sử dụng"
+      },
+      "transfer": {
+        "name": "Điều chuyển đại lý"
+      },
+      "revertCode": {
+        "name": "Nhập hàng đổi trả"
+      },
+      "uploadCode": {
+        "name": "Tra cứu kích hoạt"
+      },
+      "domain": {
+        "name": "Quản lý domain"
+      }
+    },
+    "otherConvenient": {
+      "name": "Tiện ích khác",
+      "consumerActive": {
+        "name": "kích hoạt tiêu dùng"
+      },
+      "cancelActive": {
+        "name": "Hủy kích hoạt tem"
+      },
+      "assignSerial": {
+        "name": "Gán serial và id item"
+      }
+    },
+    "accountManage": {
+      "name": "Quản lý tài khoản",
+      "users": {
+        "name": "Danh sách công ty"
+      },
+      "staffList": {
+        "name": "Danh sách nhân viên"
+      },
+      "profile": {
+        "name": "Cá nhân"
+      }
+    },
+    "guild": {
+      "name": "Hướng dẫn sử dụng"
+    },
     "menu": "DANH MỤC",
     "dashboard": "Bảng điều khiển",
     "calendar": "Lịch",
     "users": "Danh sách người dùng",
+    "productAssign": "Kích hoạt tiêu dùng",
+    "transfer": "Điều chuyển đại lý",
     "profile": "Cá nhân",
     "forms": "Biểu mẫu",
     "formsElements": "Thành phần biểu mẫu",

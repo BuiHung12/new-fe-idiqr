@@ -7,12 +7,9 @@ import CustomChildNavLink from "./CustomChildNavLink.tsx";
 import CustomNavLink from "./CustomNavLink.tsx";
 import {
   AuthenticationIcon,
-  CalendarIcon, ChartIcon,
+  ChartIcon,
   DashboardIcon,
   FormsIcon,
-  ProfileIcon,
-  SettingsIcon,
-  TablesIcon, UIElementsIcon, UsersIcon
 } from "../Icons/Icons.tsx";
 import {useSelector} from "react-redux";
 import {RootState} from "../../stores/store.ts";
@@ -126,64 +123,62 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Dashboard --> */}
-              {roleSidebar.dashboard != null && <SidebarLinkGroup
-                activeCondition={
-                  pathname === '/' || pathname.includes('dashboard')
-                }
-              >
-                {(handleClick, open) => {
-                  return (
-                    <React.Fragment>
-                      <CustomParentNavLink title={t('menu.dashboard')} visible={pathname === '/' || pathname.includes('dashboard')} open={open} handleClick={handleClick}
-                                           sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<DashboardIcon/>}/>
-                      {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
-                          <CustomChildNavLink title={'eCommerce'} to={'/'}/>
-                        </ul>
-                      </div>
-                      {/* <!-- Dropdown Menu End --> */}
-                    </React.Fragment>
-                  );
-                }}
-              </SidebarLinkGroup>}
+              {roleSidebar.dashboard && <CustomNavLink title={t('menu.dashboard')} to={'/'} visible={pathname === '/' || pathname.includes('dashboard')} icon={<DashboardIcon/>}/>}
               {/* <!-- Menu Item Dashboard --> */}
 
-              {/* <!-- Menu Item Calendar --> */}
-              {roleSidebar.calendar && <CustomNavLink title={t('menu.calendar')} to={PATHS.calendar} visible={pathname.includes('calendar')} icon={<CalendarIcon/>}/>}
-              {/* <!-- Menu Item Calendar --> */}
-
-              {/* <!-- Menu Item Calendar --> */}
-              {roleSidebar.users && <CustomNavLink title={t('menu.users')} to={PATHS.users} visible={pathname.includes('users')} icon={<UsersIcon/>}/>}
-              {/* <!-- Menu Item Calendar --> */}
-
-              {/* <!-- Menu Item Profile --> */}
-              {roleSidebar.profile && <CustomNavLink title={t('menu.profile')} to={PATHS.profile} visible={pathname.includes('profile')} icon={<ProfileIcon/>}/>}
-              {/* <!-- Menu Item Profile --> */}
-
               {/* <!-- Menu Item Forms --> */}
-              {roleSidebar.forms != null && <SidebarLinkGroup
-                activeCondition={
-                  pathname === '/forms' || pathname.includes('forms')
-                }
+              {roleSidebar.codeManage != null && <SidebarLinkGroup
+                  activeCondition={
+                    pathname === '/code-manager' || pathname.includes('code-manager')
+                  }
               >
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <CustomParentNavLink title={t('menu.forms')} visible={pathname === '/forms' || pathname.includes('forms')} open={open} handleClick={handleClick}
+                      <CustomParentNavLink title={t('menu.codeManage.name')} visible={pathname === '/code-manager' || pathname.includes('code-manager')} open={open} handleClick={handleClick}
                                            sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<FormsIcon/>}/>
                       <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
+                        className={`overflow-hidden transition-all duration-800 ${
+                          open ? 'max-h-[500px]' : 'max-h-0'
                         }`}
                       >
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
-                          {roleSidebar.forms != null && roleSidebar.forms.formElements && <CustomChildNavLink title={t('menu.formsElements')} to={PATHS.forms.elements}/>}
-                          {roleSidebar.forms != null && roleSidebar.forms.formLayout && <CustomChildNavLink title={t('menu.formsLayout')} to={PATHS.forms.layout}/>}
+                          {roleSidebar.codeManage != null && roleSidebar.codeManage.naviCode && <CustomChildNavLink title={t('menu.codeManage.naviCode.name')} to={PATHS.codeManage.naviCode}/>}
+                          {roleSidebar.codeManage != null && roleSidebar.codeManage.assignNaviCode && <CustomChildNavLink title={t('menu.codeManage.assignNaviCode.name')} to={PATHS.codeManage.assignNaviCode}/>}
+                          {roleSidebar.codeManage != null && roleSidebar.codeManage.importCode && <CustomChildNavLink title={t('menu.codeManage.importCode.name')} to={PATHS.codeManage.importCode}/>}
+                          {roleSidebar.codeManage != null && roleSidebar.codeManage.activeRole && <CustomChildNavLink title={t('menu.codeManage.activeRole.name')} to={PATHS.codeManage.activeRole}/>}
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>}
+
+              {/* <!-- Menu Item Forms --> */}
+              {roleSidebar.activeManage != null && <SidebarLinkGroup
+                  activeCondition={
+                    pathname === '/active-manager' || pathname.includes('active-manager')
+                  }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <CustomParentNavLink title={t('menu.activeManage.name')} visible={pathname === '/active-manager' || pathname.includes('active-manager')} open={open} handleClick={handleClick}
+                                           sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<FormsIcon/>}/>
+                      <div
+                        className={`overflow-hidden transition-all duration-800 ${
+                          open ? 'max-h-[500px]' : 'max-h-0'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.productList && <CustomChildNavLink title={t('menu.activeManage.productList.name')} to={PATHS.activeManage.productList}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.agentList && <CustomChildNavLink title={t('menu.activeManage.agentList.name')} to={PATHS.activeManage.agentList}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.productAssign && <CustomChildNavLink title={t('menu.activeManage.productAssign.name')} to={PATHS.activeManage.productAssign}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.transfer && <CustomChildNavLink title={t('menu.activeManage.transfer.name')} to={PATHS.activeManage.transfer}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.revertCode && <CustomChildNavLink title={t('menu.activeManage.revertCode.name')} to={PATHS.activeManage.revertCode}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.uploadCode && <CustomChildNavLink title={t('menu.activeManage.uploadCode.name')} to={PATHS.activeManage.uploadCode}/>}
+                          {roleSidebar.activeManage != null && roleSidebar.activeManage.domain && <CustomChildNavLink title={t('menu.activeManage.domain.name')} to={PATHS.activeManage.domain}/>}
                         </ul>
                       </div>
                       {/* <!-- Dropdown Menu End --> */}
@@ -193,13 +188,64 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </SidebarLinkGroup>}
               {/* <!-- Menu Item Forms --> */}
 
-              {/* <!-- Menu Item Tables --> */}
-              {roleSidebar.tables && <CustomNavLink title={t('menu.tables')} to={PATHS.tables} visible={pathname.includes('tables')} icon={<TablesIcon/>}/>}
-              {/* <!-- Menu Item Tables --> */}
+              {/* <!-- Menu Item Forms --> */}
+              {roleSidebar.otherConvenient != null && <SidebarLinkGroup
+                  activeCondition={
+                    pathname === '/convenient' || pathname.includes('convenient')
+                  }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <CustomParentNavLink title={t('menu.activeManage.name')} visible={pathname === '/convenient' || pathname.includes('convenient')} open={open} handleClick={handleClick}
+                                           sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<FormsIcon/>}/>
+                      <div
+                        className={`overflow-hidden transition-all duration-800 ${
+                          open ? 'max-h-[500px]' : 'max-h-0'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          {roleSidebar.otherConvenient != null && roleSidebar.otherConvenient.consumerActive && <CustomChildNavLink title={t('menu.otherConvenient.consumerActive.name')} to={PATHS.otherConvenient.consumerActive}/>}
+                          {roleSidebar.otherConvenient != null && roleSidebar.otherConvenient.cancelActive && <CustomChildNavLink title={t('menu.otherConvenient.cancelActive.name')} to={PATHS.otherConvenient.cancelActive}/>}
+                          {roleSidebar.otherConvenient != null && roleSidebar.otherConvenient.assignSerial && <CustomChildNavLink title={t('menu.otherConvenient.assignSerial.name')} to={PATHS.otherConvenient.assignSerial}/>}
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>}
+              {/* <!-- Menu Item Forms --> */}
 
-              {/* <!-- Menu Item Settings --> */}
-              {roleSidebar.settings && <CustomNavLink title={t('menu.settings')} to={PATHS.settings} visible={pathname.includes('settings')} icon={<SettingsIcon/>}/>}
-              {/* <!-- Menu Item Settings --> */}
+              {/* <!-- Menu Item Forms --> */}
+              {roleSidebar.accountManage != null && <SidebarLinkGroup
+                  activeCondition={
+                    pathname === '/account' || pathname.includes('account')
+                  }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <CustomParentNavLink title={t('menu.accountManage.name')} visible={pathname === '/account' || pathname.includes('account')} open={open} handleClick={handleClick}
+                                           sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<FormsIcon/>}/>
+                      <div
+                        className={`overflow-hidden transition-all duration-800 ${
+                          open ? 'max-h-[500px]' : 'max-h-0'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          {roleSidebar.accountManage != null && roleSidebar.accountManage.users && <CustomChildNavLink title={t('menu.accountManage.users.name')} to={PATHS.accountManage.users}/>}
+                          {roleSidebar.accountManage != null && roleSidebar.accountManage.staffList && <CustomChildNavLink title={t('menu.accountManage.staffList.name')} to={PATHS.accountManage.staffList}/>}
+                          {roleSidebar.accountManage != null && roleSidebar.accountManage.profile && <CustomChildNavLink title={t('menu.accountManage.profile.name')} to={PATHS.accountManage.profile}/>}
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>}
+              {/* <!-- Menu Item Forms --> */}
+
             </ul>
           </div>
 
@@ -211,35 +257,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Chart --> */}
-              {roleSidebar.chart && <CustomNavLink title={t('menu.chart')} to={PATHS.chart} visible={pathname.includes('chart')} icon={<ChartIcon/>}/>}
+              {roleSidebar.guild && <CustomNavLink title={t('menu.guild')} to={PATHS.guild} visible={pathname.includes('guild')} icon={<ChartIcon/>}/>}
               {/* <!-- Menu Item Chart --> */}
-
-              {/* <!-- Menu Item Ui Elements --> */}
-              {roleSidebar.uiElements != null && <SidebarLinkGroup
-                activeCondition={pathname === '/ui' || pathname.includes('ui')}
-              >
-                {(handleClick, open) => {
-                  return (
-                    <React.Fragment>
-                      <CustomParentNavLink title={t('menu.uiElements')} visible={pathname === '/ui' || pathname.includes('ui')} open={open} handleClick={handleClick}
-                                           sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<UIElementsIcon/>}/>
-                      {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
-                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
-                          {roleSidebar.uiElements != null && roleSidebar.uiElements.alerts && <CustomChildNavLink title={t('menu.alerts')} to={PATHS.ui.alerts}/>}
-                          {roleSidebar.uiElements != null && roleSidebar.uiElements.buttons && <CustomChildNavLink title={t('menu.buttons')} to={PATHS.ui.buttons}/>}
-                        </ul>
-                      </div>
-                      {/* <!-- Dropdown Menu End --> */}
-                    </React.Fragment>
-                  );
-                }}
-              </SidebarLinkGroup>}
-              {/* <!-- Menu Item Ui Elements --> */}
 
               {/* <!-- Menu Item Auth Pages --> */}
               {roleSidebar.authentication != null && <SidebarLinkGroup
@@ -253,8 +272,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <CustomParentNavLink title={t('menu.authentication')} visible={pathname === '/auth' || pathname.includes('auth')} open={open} handleClick={handleClick}
                                            sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} icon={<AuthenticationIcon/>}/>
                       <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
+                        className={`overflow-hidden transition-all duration-800 ${
+                          open ? 'max-h-[500px]' : 'max-h-0'
                         }`}
                       >
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">

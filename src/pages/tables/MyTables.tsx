@@ -26,6 +26,13 @@ export interface ColumnDef {
   field: string;
   type: string;
   isVisible: boolean;
+}
+
+export interface ActionDef {
+  id: number,
+  headerName: string,
+  field: string;
+  type: string;
   viewModalSetting: ViewModelSetting;
   editModalSetting: EditModelSetting;
   addModalSetting: AddModelSetting;
@@ -34,8 +41,9 @@ export interface ColumnDef {
 interface MyTableProps<T extends Record<string, unknown>> {
   data: T[],
   columnDefs: ColumnDef[],
+  actionDefs: ActionDef[],
+  filterColumns: TableInstance<T>['filterColumns'];
   setColumnDefs: React.Dispatch<React.SetStateAction<ColumnDef[]>>;
-  allColumns: TableInstance<T>['allColumns'];
   filters: TableInstance<T>['state']['filters'];
   setFilters: React.Dispatch<React.SetStateAction<TableInstance<T>['state']['filters']>>;
   currentPage: number;
@@ -53,7 +61,8 @@ const MyTables = <T extends Record<string, unknown>>({
   data,
   columnDefs,
   setColumnDefs,
-  allColumns,
+  actionDefs,
+  filterColumns,
   filters,
   setFilters,
   currentPage,
@@ -142,13 +151,14 @@ const MyTables = <T extends Record<string, unknown>>({
   }, [columnDefs]);
 
   const instance: TableInstance<T> = {
-    allColumns: allColumns,
+    filterColumns: filterColumns,
     state: {
       filters
     },
     setFilter,
     setAllFilters,
     columnDefs,
+    actionDefs,
     changeHideColumn
   };
 
@@ -179,7 +189,7 @@ const MyTables = <T extends Record<string, unknown>>({
         open={isFormOpen}
         onClose={() => setIsFormOpen(false)}
         onSave={handleSave}
-        columnDefs={columnDefs}
+        actionDefs={actionDefs}
         initialData={selectedData || {}}
         viewOnly={viewOnly}
       />

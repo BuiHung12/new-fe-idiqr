@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField, Button } from '@mui/material';
-import { ColumnDef } from "./MyTables.tsx";
+import {ActionDef} from "./MyTables.tsx";
 
 interface ModelFormProps<T> {
   open: boolean;
   onClose: () => void;
   onSave: (data: T) => void;
-  columnDefs: ColumnDef[];
+  actionDefs: ActionDef[];
   initialData?: Partial<T>;
   viewOnly?: boolean; // New prop for view-only mode
 }
@@ -15,7 +15,7 @@ const ActionModelForm = <T extends Record<string, any>>({
                                                           open,
                                                           onClose,
                                                           onSave,
-                                                          columnDefs,
+                                                          actionDefs,
                                                           initialData = {},
                                                           viewOnly = false, // Default to false
                                                         }: ModelFormProps<T>) => {
@@ -61,7 +61,7 @@ const ActionModelForm = <T extends Record<string, any>>({
         <DialogContent style={{
           paddingTop: '5px', // Increase top padding to prevent the label from being obscured
         }}>
-          {columnDefs.map((column) => {
+          {actionDefs.map((column) => {
             let visible = true;
             let required = true;
             let disabled = true;

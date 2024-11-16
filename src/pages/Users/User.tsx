@@ -51,10 +51,6 @@ const Users = () => {
 
   useEffect(() => {
     loadData().then(() => {});
-  }, []);
-
-  useEffect(() => {
-    loadData().then(() => {});
   }, [size, currentPage, filters]);
 
   const onRefresh = useCallback(
@@ -103,7 +99,8 @@ const Users = () => {
         data={data}
         columnDefs={columnDefs}
         setColumnDefs={setColumnDefs}
-        allColumns={userConfig.filterColum}
+        actionDefs={userConfig.actionDefs}
+        filterColumns={userConfig.filterColumns}
         filters={filters}
         setFilters={setFilters}
         lastPage={lastPage}

@@ -22,49 +22,51 @@ const SimpleTable: React.FC<SimpleTableProps> = ({
                                                    handleDeleteClick
 }) => {
   return (
-    <table>
-      <thead>
-      <tr>
-        {columnDefs.map((column, index) => {
-          if (!column.isVisible) return null;
-          return <th key={index}>{column.headerName}</th>;
-        })}
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {columnDefs.map((column, colIndex) => (
-              column.isVisible && <td key={colIndex} data-title={column.headerName}>
-                {decisionColumns.includes(column.field) ? (
-                  <Label decision={row[column.field]} />
-                ) : (
-                  row[column.field] ?? ''
-                )}
+    <div className="table-wrapper">
+      <table>
+        <thead>
+        <tr>
+          {columnDefs.map((column, index) => {
+            if (!column.isVisible) return null;
+            return <th key={index}>{column.headerName}</th>;
+          })}
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {columnDefs.map((column, colIndex) => (
+                column.isVisible && <td key={colIndex} data-title={column.headerName}>
+                  {decisionColumns.includes(column.field) ? (
+                    <Label decision={row[column.field]} />
+                  ) : (
+                    row[column.field] ?? ''
+                  )}
+                </td>
+              ))}
+              <td>
+                <button className="p-1 text-blue-500 hover:text-blue-700"
+                        onClick={() => handleViewClick(row)}
+                >
+                  <FaEye />
+                </button>
+                <button className="p-1 text-yellow-500 hover:text-yellow-700"
+                        onClick={() => handleEditClick(row)}
+                >
+                  <FaEdit />
+                </button>
+                <button className="p-1 text-red-500 hover:text-red-700"
+                        onClick={() => handleDeleteClick(row)}
+                >
+                  <FaTrash />
+                </button>
               </td>
-            ))}
-            <td>
-              <button className="p-1 text-blue-500 hover:text-blue-700"
-                      onClick={() => handleViewClick(row)}
-              >
-                <FaEye />
-              </button>
-              <button className="p-1 text-yellow-500 hover:text-yellow-700"
-                      onClick={() => handleEditClick(row)}
-              >
-                <FaEdit />
-              </button>
-              <button className="p-1 text-red-500 hover:text-red-700"
-                      onClick={() => handleDeleteClick(row)}
-              >
-                <FaTrash />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

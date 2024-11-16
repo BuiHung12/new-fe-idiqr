@@ -1,5 +1,5 @@
 export const API_INFO = {
-  URL: 'http://146.56.167.253/base-be',
+  URL: 'http://localhost:8500/base-be',
 }
 
 export const BASE_PATH_NGINX = '/base-ui';

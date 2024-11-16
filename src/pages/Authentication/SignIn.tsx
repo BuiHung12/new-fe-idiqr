@@ -25,7 +25,7 @@ const SignIn: React.FC = () => {
   const handleLogin = async (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     e.preventDefault();
     try {
-      const payload = { username, password }
+      const payload = { userName: username, passWord: password }
       const response = await request<AuthState>(loginApi, 'POST', payload)
       if (response.status === 401) {
         Store.addNotification(notifications.loginError);

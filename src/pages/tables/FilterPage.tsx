@@ -49,7 +49,7 @@ export function FilterPage<T extends Record<string, unknown>>({
   show,
 }: FilterPageProps<T>): ReactElement {
   const { classes } = useStyles()
-  const { allColumns, setAllFilters, state: { filters }, setFilter } = instance
+  const { filterColumns, setAllFilters, state: { filters }, setFilter } = instance
 
   const onSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
@@ -96,7 +96,7 @@ export function FilterPage<T extends Record<string, unknown>>({
               Reset
             </Button>
             <div className={classes.grid}>
-              {allColumns
+              {filterColumns
                 .filter((it) => it.canFilter)
                 .map((column) => {
                   const filter = filters.find(f => f.id === column.id);

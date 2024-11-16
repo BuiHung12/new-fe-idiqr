@@ -14,11 +14,21 @@ export interface AuthState {
 const getRoleSidebarVisible = (role: any) => {
     switch (role) {
         case 'ROLE_ADMIN':
-            return RoleSidebar.ADMIN;
-        case 'ROLE_USER':
-            return RoleSidebar.USER;
+            return RoleSidebar.ROLE_ADMIN;
+        case 'ROLE_COMPANY':
+            return RoleSidebar.ROLE_COMPANY;
+        case 'ROLE_STAFF':
+            return RoleSidebar.ROLE_STAFF;
+        case 'ROLE_DAILY':
+            return RoleSidebar.ROLE_DAILY;
+        case 'ROLE_DAILY_2':
+            return RoleSidebar.ROLE_DAILY_2;
+        case 'ROLE_DAILY_3':
+            return RoleSidebar.ROLE_DAILY_3;
+        case 'ROLE_UP_TIN':
+            return RoleSidebar.ROLE_UP_TIN;
         default:
-            return RoleSidebar.GUEST;
+            return RoleSidebar.ROLE_GUEST;
     }
 }
 
@@ -58,7 +68,7 @@ export const authSlice = createSlice({
             state.token = null;
             state.image = null;
             state.role = "ROLE_GUEST";
-            state.roleSidebarVisible = RoleSidebar.GUEST;
+            state.roleSidebarVisible = RoleSidebar.ROLE_GUEST;
             localStorage.removeItem('token');
             localStorage.removeItem('username');
             localStorage.removeItem('name');

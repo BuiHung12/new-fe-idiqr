@@ -3,10 +3,78 @@
   "welcome": "Hello",
   "description": "This is an example of a React app with localization.",
   "menu": {
+    "codeManage": {
+      "name": "Code management",
+      "naviCode": {
+        "name": "NaviCode"
+      },
+      "assignNaviCode": {
+        "name": "AssignNaviCode"
+      },
+      "importCode": {
+        "name": "Import Code"
+      },
+      "activeRole": {
+        "name": "Active Role"
+      }
+    },
+    "activeManage": {
+      "name": "Active management",
+      "productList": {
+        "name": "Product List"
+      },
+      "agentList": {
+        "name": "Agent List"
+      },
+      "productAssign": {
+        "name": "Product Assign"
+      },
+      "transfer": {
+        "name": "Transfer"
+      },
+      "revertCode": {
+        "name": "Revert code"
+      },
+      "uploadCode": {
+        "name": "Search code"
+      },
+      "domain": {
+        "name": "Domain"
+      }
+    },
+    "otherConvenient": {
+      "name": "Other Convenient",
+      "consumerActive": {
+        "name": "Consumer Active"
+      },
+      "cancelActive": {
+        "name": "Cancel Active"
+      },
+      "assignSerial": {
+        "name": "Assign Serial"
+      }
+    },
+    "accountManage": {
+      "name": "Account Manage",
+      "users": {
+        "name": "Company List"
+      },
+      "staffList": {
+        "name": "Staff List"
+      },
+      "profile": {
+        "name": "Profile"
+      }
+    },
+    "guild": {
+      "name": "Guild"
+    },
     "menu": "MENU",
     "dashboard": "Dashboard",
     "calendar": "Calendar",
     "users": "Users",
+    "productAssign": "Product Assign",
+    "transfer": "Transfer",
     "profile": "Profile",
     "forms": "Forms",
     "formsElements": "Forms Elements",

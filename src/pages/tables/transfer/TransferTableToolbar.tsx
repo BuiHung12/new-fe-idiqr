@@ -1,4 +1,3 @@
-import AddIcon from '@mui/icons-material/Add'
 import CachedIcon from '@mui/icons-material/Cached'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import ViewColumnsIcon from '@mui/icons-material/ViewColumn'
@@ -6,12 +5,12 @@ import { Button, IconButton, Toolbar, Tooltip } from '@mui/material'
 import React, { MouseEvent, MouseEventHandler, PropsWithChildren, ReactElement, useCallback, useState } from 'react'
 import { makeStyles } from 'tss-react/mui'
 
-import { ColumnHidePage } from './ColumnHidePage'
-import { FilterPage } from './FilterPage'
-import {TableInstance} from "../../constant/tables.ts";
-import {FilterChipBar} from "./FilterChipBar.tsx";
-import RowSelect from "./RowSelect.tsx";
-import './Toolbar.css';
+import { ColumnHidePage } from './../ColumnHidePage'
+import { FilterPage } from './../FilterPage'
+import {TableInstance} from "../../../constant/tables.ts";
+import {FilterChipBar} from "./../FilterChipBar.tsx";
+import RowSelect from "./../RowSelect.tsx";
+import './../Toolbar.css';
 
 export interface TableMouseEventHandler<T extends Record<string, unknown>> {
   (instance: TableInstance<T>): MouseEventHandler
@@ -101,15 +100,13 @@ export interface Command<T extends Record<string, unknown>> {
 
 interface TableToolbarProps<T extends Record<string, unknown>> {
   instance: TableInstance<T>,
-  onAdd: MouseEventHandler
   onRefresh: MouseEventHandler
   size: number;
   setSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export function TableToolbar<T extends Record<string, unknown>>({
+export function TransferTableToolbar<T extends Record<string, unknown>>({
   instance,
-  onAdd,
   onRefresh,
   size,
   setSize
@@ -170,13 +167,6 @@ export function TableToolbar<T extends Record<string, unknown>>({
           icon={<FilterListIcon />}
           onClick={() => handleFilterClick}
           label='Filter by columns'
-          variant='right'
-        />
-        <SmallIconActionButton<T>
-          instance={instance}
-          icon={<AddIcon />}
-          onClick={() => onAdd}
-          label='Add'
           variant='right'
         />
       </div>

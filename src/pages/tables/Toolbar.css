@@ -1,7 +1,7 @@
 .MuiToolbar-root {
-  display: flex;
+  display: inline;
   align-items: center; /* Căn giữa theo chiều dọc */
   min-height: 64px; /* Chiều cao tối thiểu */
-  padding: 0 0px; /* Padding mặc định */
+  padding: 0 0; /* Padding mặc định */
   box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
 }
